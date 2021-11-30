@@ -1,10 +1,11 @@
 import "./App.css";
+import "bootstrap/dist/css/bootstrap.css";
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <p>
+        <p className="text-primary">
           Edit <code>src/App.js</code> and save to reload.
         </p>
         <a
