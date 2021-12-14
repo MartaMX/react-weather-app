@@ -3,13 +3,25 @@ import "bootstrap/dist/css/bootstrap.css";
 import WeatherInfo from "./WeatherInfo";
 
 function App() {
+  function handleResponse(response) {}
+  function Search() {
+    const apiKey = "020078c4a89cd61e6aa94f2028cbd7";
+    handleResponse();
+  }
+  function handleSubmit(event) {
+    event.preventDefault();
+    Search();
+  }
+  function handleCityChange(event) {
+    event.preventDefault();
+  }
   return (
     <div className="App">
       <div className="container">
         <div className="wrapper">
           <p>Search</p>
           <div className="search">
-            <form id="search-form">
+            <form onSubmit={handleSubmit} id="search-form">
               <div className="row search">
                 <div className="col-9">
                   <input
@@ -18,6 +30,8 @@ function App() {
                     class="form-control"
                     id="city-input"
                     autocomplete="off"
+                    autoFocus="on"
+                    onChange={handleCityChange}
                   />
                 </div>
                 <div className="col-3">
