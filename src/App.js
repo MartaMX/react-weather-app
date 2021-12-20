@@ -79,15 +79,12 @@ function App() {
                   width="50"
                   class="float-left"
                   id="today-icon"
+                  alt="WeatherDescription"
                 />
                 <span className="float-left temperature" id="temperature">
                   {weatherData.temperature}
                 </span>
-                <span className="float-left unit">
-                  <a href="#" class="active" id="celsius">
-                    °C
-                  </a>
-                </span>
+                <span className="float-left unit">°C</span>
               </div>
             </div>
           </div>
