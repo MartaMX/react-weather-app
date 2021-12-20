@@ -2,6 +2,9 @@ import "./App.css";
 import "bootstrap/dist/css/bootstrap.css";
 import React, { useState } from "react";
 import axios from "axios";
+import WeatherIcon from "./WeatherIcon";
+
+export default App;
 
 function App() {
   const [weatherData, setWeatherData] = useState({});
@@ -74,13 +77,7 @@ function App() {
             </div>
             <div className="col-5 right">
               <div className="clearfix weather-temperature">
-                <img
-                  src="https://cdn-icons-png.flaticon.com/512/414/414927.png"
-                  width="50"
-                  class="float-left"
-                  id="today-icon"
-                  alt="WeatherDescription"
-                />
+                <WeatherIcon />
                 <span className="float-left temperature" id="temperature">
                   {weatherData.temperature}
                 </span>
@@ -93,5 +90,3 @@ function App() {
     </div>
   );
 }
-
-export default App;
