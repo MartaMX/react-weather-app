@@ -1,13 +1,13 @@
 import React from "react";
+import ReactAnimatedWeather from "react-animated-weather";
 
 export default function WeatherIcon() {
   return (
-    <img
-      src="https://cdn-icons-png.flaticon.com/512/414/414927.png"
-      width="50"
-      class="float-left"
-      id="today-icon"
-      alt="WeatherDescription"
+    <ReactAnimatedWeather
+      icon="CLEAR_DAY"
+      color="goldenrod"
+      size={52}
+      animate={true}
     />
   );
 }
