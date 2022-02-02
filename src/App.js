@@ -3,6 +3,7 @@ import "bootstrap/dist/css/bootstrap.css";
 import React, { useState } from "react";
 import axios from "axios";
 import WeatherIcon from "./WeatherIcon";
+import WeatherForecast from "./WeatherForecast";
 
 export default App;
 
@@ -16,6 +17,7 @@ function App() {
       description: response.data.weather[0].description,
       wind: response.data.wind.speed,
       icon: response.data.weather[0].icon,
+      coordinates: response.data.coord,
     });
     console.log(weatherData);
   }
@@ -76,10 +78,11 @@ function App() {
                   km/h
                 </li>
               </ul>
+              <WeatherForecast />
             </div>
             <div className="col-5 right">
               <div className="clearfix weather-temperature">
-                <WeatherIcon code={weatherData.icon} />
+                <WeatherIcon code={weatherData.icon} size={52} />
                 <span className="float-left temperature" id="temperature">
                   {weatherData.temperature}
                 </span>
