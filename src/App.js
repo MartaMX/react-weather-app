@@ -15,7 +15,9 @@ function App() {
       humidity: response.data.main.humidity,
       description: response.data.weather[0].description,
       wind: response.data.wind.speed,
+      icon: response.data.weather[0].icon,
     });
+    console.log(weatherData);
   }
   function Search() {
     const apiKey = "f020078c4a89cd61e6aa94f2028cbd7e";
@@ -77,7 +79,7 @@ function App() {
             </div>
             <div className="col-5 right">
               <div className="clearfix weather-temperature">
-                <WeatherIcon />
+                <WeatherIcon code={weatherData.icon} />
                 <span className="float-left temperature" id="temperature">
                   {weatherData.temperature}
                 </span>
