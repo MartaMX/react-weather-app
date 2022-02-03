@@ -78,7 +78,7 @@ function App() {
                   km/h
                 </li>
               </ul>
-              <WeatherForecast />
+              <WeatherForecast coordinates={weatherData.coordinates} />
             </div>
             <div className="col-5 right">
               <div className="clearfix weather-temperature">
