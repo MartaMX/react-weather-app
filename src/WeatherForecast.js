@@ -4,6 +4,10 @@ import "./WeatherForecast.css";
 
 export default function WeatherForecast(props) {
   console.log(props.coordinates);
+  let apiKey = "f020078c4a89cd61e6aa94f2028cbd7e";
+  let longitude = props.lon;
+  let latitude = props.lat;
+  let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${latitude}&lon=${longitude}&appid=${apiKey}`;
   return (
     <div className="WeatherForecast">
       <div className="row">
