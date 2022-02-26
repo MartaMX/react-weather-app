@@ -1,15 +1,22 @@
-import React, { useState } from "react";
-import axios from "axios";
+import React from "react";
 
-export default function WeatherInfo() {
-  let [temperat, setTemperat] = useState(0);
-  function getTemperature(response) {
-    console.log(response);
-    console.log(response.data.main.temp);
-    setTemperat(Math.round(response.data.main.temp));
-    //alert(temperat);
-  }
-  let url = `https://api.openweathermap.org/data/2.5/weather?q=Paris&appid=f020078c4a89cd61e6aa94f2028cbd7e&units=metric`;
-  axios.get(url).then(getTemperature);
-  return <span> {temperat} </span>;
+export default function WeatherInfo(props) {
+  return (
+    <div>
+      <h1 id="city">{props.data.city}</h1>
+      <ul>
+        <li>
+          <span id="day"> Friday</span>
+          <span id="time"> 5:00,</span>
+          <span id="description"> {props.data.description}</span>
+        </li>
+        <li>
+          Humidity: <span id="humidity"> {props.data.humidity} </span>
+          %, Wind:
+          <span id="wind">{props.data.wind}</span>
+          km/h
+        </li>
+      </ul>
+    </div>
+  );
 }

@@ -2,6 +2,7 @@ import "./App.css";
 import "bootstrap/dist/css/bootstrap.css";
 import React, { useState } from "react";
 import axios from "axios";
+import WeatherInfo from "./WeatherInfo";
 import WeatherIcon from "./WeatherIcon";
 import WeatherForecast from "./WeatherForecast";
 
@@ -18,8 +19,9 @@ function App() {
       wind: response.data.wind.speed,
       icon: response.data.weather[0].icon,
       coordinates: response.data.coord,
+      city: response.data.name,
     });
-    console.log(weatherData);
+    //    console.log(weatherData);
   }
   function Search() {
     const apiKey = "f020078c4a89cd61e6aa94f2028cbd7e";
@@ -64,20 +66,7 @@ function App() {
 
           <div className="row">
             <div className="col-7">
-              <h1 id="city">{city}</h1>
-              <ul>
-                <li>
-                  <span id="day"> Friday</span>
-                  <span id="time"> 5:00,</span>
-                  <span id="description"> {weatherData.description}</span>
-                </li>
-                <li>
-                  Humidity: <span id="humidity"> {weatherData.humidity} </span>
-                  %, Wind:
-                  <span id="wind">{weatherData.wind}</span>
-                  km/h
-                </li>
-              </ul>
+              <WeatherInfo data={weatherData} />
               <WeatherForecast coordinates={weatherData.coordinates} />
             </div>
             <div className="col-5 right">
