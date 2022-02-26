@@ -20,6 +20,7 @@ function App() {
       icon: response.data.weather[0].icon,
       coordinates: response.data.coord,
       city: response.data.name,
+      date: new Date(response.data.dt * 1000),
     });
     //    console.log(weatherData);
   }
