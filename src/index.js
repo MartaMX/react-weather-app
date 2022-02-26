@@ -4,7 +4,7 @@ import App from "./App";
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <App defaultCity="Amsterdam" />
   </React.StrictMode>,
   document.getElementById("root")
 );

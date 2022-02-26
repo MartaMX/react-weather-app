@@ -8,11 +8,11 @@ export default function WeatherInfo(props) {
 
       <ul>
         <li>
-          <FormattedDate date={props.data.date} />
-        </li>
-        <li>
-          <span id="day"> Date </span>
-          <span id="time"> 5:00,</span>
+          <span id="time">
+            {" "}
+            <FormattedDate date={props.data.date} />{" "}
+          </span>
+
           <span id="description"> {props.data.description}</span>
         </li>
         <li>
