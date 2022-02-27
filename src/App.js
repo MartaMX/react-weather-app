@@ -39,6 +39,7 @@ function App(props) {
   }
 
   if (weatherData.ready) {
+    console.log(weatherData);
     return (
       <div className="App">
         <div className="container">
